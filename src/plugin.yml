@@ -1,0 +1,10 @@
+name: Radar
+version: 2.5
+main: com.lenis0012.bukkit.radar.RadarPlugin
+depend: [BKCommonLib]
+description: Radar GUI in minecraft
+author: lenis0012
+commands:
+  radar:
+    description: Radar main command.
+    usage: /radar
