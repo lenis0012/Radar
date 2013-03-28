@@ -33,7 +33,7 @@ public class RadarCommand implements CommandExecutor {
 		}
 		
 		if(args.length == 0) {
-			if(plugin.players.contains(name)) {
+			if(plugin.players.containsKey(name)) {
 				plugin.players.remove(name);
 				CommonObjective sidebar = CommonScoreboard.get(player).getObjective(Display.SIDEBAR);
 				sidebar.clearScores();
@@ -43,7 +43,7 @@ public class RadarCommand implements CommandExecutor {
 				CommonObjective sidebar = CommonScoreboard.get(player).getObjective(Display.SIDEBAR);
 				sidebar.setDisplayName("Radar");
 				sidebar.show();
-				plugin.players.add(name);
+				plugin.players.put(name, new DistanceChecker(player, plugin.defaultRadius));
 				inf(player, "Radar has been turned "+ChatColor.DARK_GREEN+"ON");
 			}
 		}
